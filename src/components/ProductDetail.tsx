@@ -2,9 +2,11 @@ import Breadcrumbs from "./Breadcrumbs";
 import Button from "./Button";
 import Colors from "./Colors";
 import Highlights from "./Highlights";
-import styles from "./ProductDetail.module.scss";
 import Rating from "./Rating";
 import Sizes from "./Sizes";
+import { ReactComponent as CartSvg } from "../icons/cart.svg";
+
+import styles from "./ProductDetail.module.scss";
 
 type Props = {
   categories: { label: string; href: string }[];
@@ -47,7 +49,9 @@ export default function ProductDetail({
         }))}
       />
       <Sizes items={sizes} />
-      <Button>Add to cart</Button>
+      <Button>
+        <CartSvg width="1.25rem" height="1.25rem" /> Add to cart
+      </Button>
     </div>
   );
 }
