@@ -36,12 +36,13 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
 
-  --fontSizes-xs: 0.75rem;
-  --fontSizes-sm: 0.875rem;
-  --fontSizes-md: 1rem;
-  --fontSizes-lg: 1.125rem;
-  --fontSizes-xl: 1.25rem;
-  --fontSizes-2xl: 1.5rem;
-  --fontSizes-3xl: 1.875rem;
-  --fontSizes-4xl: 2.25rem;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 2.5rem;
 }
