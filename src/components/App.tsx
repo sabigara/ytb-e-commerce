@@ -13,7 +13,7 @@ function App() {
         <ProductDetail
           categories={[
             {
-              href: "/home",
+              href: "/",
               label: "Home",
             },
             {
