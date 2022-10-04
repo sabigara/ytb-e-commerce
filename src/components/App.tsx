@@ -39,11 +39,11 @@ function App() {
               hex: "#000",
             },
           ]}
-          name="White T-Shirt"
+          name="Cool T-Shirt"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
           price="$49"
           sizes={["xs", "s", "m", "l", "xl"]}
-          rating={3}
+          rating={4}
           numOfReview={84}
           highlights={[
             "Lorem ipsum",
