@@ -60,20 +60,24 @@ export default function Carousel({ images }: Props) {
           </li>
         ))}
       </ul>
-      <button
-        className={styles.buttonLeft}
-        aria-label="previous image"
-        onClick={() => scroll("previous")}
-      >
-        <ChevronLeft />
-      </button>
-      <button
-        className={styles.buttonRight}
-        aria-label="next image"
-        onClick={() => scroll("next")}
-      >
-        <ChevronRight />
-      </button>
+      {index > 0 && (
+        <button
+          className={styles.buttonLeft}
+          aria-label="previous image"
+          onClick={() => scroll("previous")}
+        >
+          <ChevronLeft />
+        </button>
+      )}
+      {index < images.length - 1 && (
+        <button
+          className={styles.buttonRight}
+          aria-label="next image"
+          onClick={() => scroll("next")}
+        >
+          <ChevronRight />
+        </button>
+      )}
       <Indicator length={images.length} current={index} />
     </div>
   );
