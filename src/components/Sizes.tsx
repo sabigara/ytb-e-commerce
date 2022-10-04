@@ -9,13 +9,14 @@ export default function Sizes({ items }: Props) {
     <div className={styles.container}>
       <h2 className={styles.title}>Size:</h2>
       <fieldset className={styles.fieldset}>
-        {items.map((value) => (
+        {items.map((value, i) => (
           <label key={value} className={styles.label}>
             <input
               type="radio"
               name="size"
               value={value}
               className={styles.input}
+              defaultChecked={i === 0}
             />
             <div className={styles.item}>{value.toUpperCase()}</div>
           </label>

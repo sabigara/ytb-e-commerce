@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./Colors.module.scss";
 
 type Props = {
@@ -9,13 +10,14 @@ export default function Colors({ items }: Props) {
     <div className={styles.container}>
       <h2 className={styles.title}>Color:</h2>
       <fieldset className={styles.fieldset}>
-        {items.map(({ value, hex }) => (
+        {items.map(({ value, hex }, i) => (
           <label key={hex} className={styles.label}>
             <input
               type="radio"
               name="color"
               value={value}
               className={styles.input}
+              defaultChecked={i === 0}
             />
             <div
               className={styles.item}
