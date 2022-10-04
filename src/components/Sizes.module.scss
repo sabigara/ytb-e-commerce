@@ -26,6 +26,11 @@
   height: 2.5rem;
   width: 4rem;
   position: relative;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--colors-gray-100);
+  }
 }
 
 .input {
