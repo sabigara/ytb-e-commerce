@@ -1,4 +1,4 @@
-import React from "react";
+import Breadcrumbs from "./Breadcrumbs";
 import styles from "./ProductDetail.module.scss";
 
 type Props = {
@@ -6,7 +6,7 @@ type Props = {
   name: string;
   description: string;
   price: string;
-  colors: string[]; // in HEX
+  colors: { label: string; hex: string }[];
   sizes: string[];
 };
 
@@ -20,20 +20,16 @@ export default function ProductDetail({
 }: Props) {
   return (
     <div className={styles.container}>
-      <ul>
-        {categories.map((category) => (
-          <li key={category.href}>{category.label}</li>
-        ))}
-      </ul>
-      <h1>{name}</h1>
-      <p>{description}</p>
-      <div>{price}</div>
-      <ul>
+      <Breadcrumbs items={categories} />
+      <h1 className={styles.name}>{name}</h1>
+      <div className={styles.price}>{price}</div>
+      <p className={styles.description}>{description}</p>
+      <ul className={styles.colors}>
         {colors.map((color) => (
-          <li key={color}>{color}</li>
+          <li key={color.hex}>{color.label}</li>
         ))}
       </ul>
-      <ul>
+      <ul className={styles.sizes}>
         {sizes.map((size) => (
           <li key={size}>{size}</li>
         ))}

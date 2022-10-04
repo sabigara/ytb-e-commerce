@@ -29,4 +29,10 @@
   --round-xl: 0.75rem;
   --round-2xl: 1rem;
   --round-full: 9999px;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
 }

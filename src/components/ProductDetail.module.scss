@@ -3,3 +3,27 @@
   flex-direction: column;
   row-gap: 1rem;
 }
+
+.name {
+  font-weight: var(--font-weight-extrabold);
+  font-size: 2rem;
+}
+
+.price {
+  font-weight: var(--font-weight-bold);
+  font-size: 1.5rem;
+}
+
+.description {
+  color: var(--colors-gray-600);
+}
+
+.colors {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.sizes {
+  display: flex;
+  column-gap: 0.5rem;
+}
