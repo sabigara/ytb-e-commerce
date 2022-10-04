@@ -6,18 +6,21 @@ type Props = {
 
 export default function Sizes({ items }: Props) {
   return (
-    <fieldset className={styles.container}>
-      {items.map((value) => (
-        <label className={styles.label}>
-          <input
-            type="radio"
-            name="size"
-            value={value}
-            className={styles.input}
-          />
-          <div className={styles.item}>{value.toUpperCase()}</div>
-        </label>
-      ))}
-    </fieldset>
+    <div className={styles.container}>
+      <h3 className={styles.title}>Size:</h3>
+      <fieldset className={styles.fieldset}>
+        {items.map((value) => (
+          <label className={styles.label}>
+            <input
+              type="radio"
+              name="size"
+              value={value}
+              className={styles.input}
+            />
+            <div className={styles.item}>{value.toUpperCase()}</div>
+          </label>
+        ))}
+      </fieldset>
+    </div>
   );
 }
