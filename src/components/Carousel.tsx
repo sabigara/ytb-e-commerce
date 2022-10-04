@@ -10,7 +10,17 @@ type Props = {
 
 export default function Carousel({ images }: Props) {
   const listRef = React.useRef<HTMLUListElement>(null!);
+  const itemRefs = React.useRef<HTMLLIElement[]>([]);
+  const observerRef = React.useRef<IntersectionObserver | null>(null);
   const [index, setIndex] = React.useState(0);
+
+  const onIntersect: IntersectionObserverCallback = (entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      setIndex(Number(entry.target.getAttribute("data-index")));
+    }
+  };
+
   const scroll = (direction: "previous" | "next") => {
     const newIndex = Math.min(
       images.length - 1,
@@ -19,14 +29,33 @@ export default function Carousel({ images }: Props) {
     listRef.current.scrollTo({
       left: newIndex * listRef.current.getBoundingClientRect().width,
     });
-    setIndex(newIndex);
   };
+
+  React.useEffect(() => {
+    observerRef.current = new IntersectionObserver(onIntersect, {
+      root: listRef.current,
+      threshold: 0.5,
+    });
+    itemRefs.current.map((elm) => void observerRef.current?.observe(elm));
+    return () =>
+      void itemRefs.current.map(
+        (elm) => void observerRef.current?.unobserve(elm)
+      );
+  }, []);
 
   return (
     <div className={styles.container}>
       <ul className={styles.list} ref={listRef}>
-        {images.map((src) => (
-          <li key={src} className={styles.item}>
+        {images.map((src, i) => (
+          <li
+            key={src}
+            className={styles.item}
+            ref={(elm) => {
+              if (!elm) return;
+              itemRefs.current[i] = elm;
+            }}
+            data-index={i}
+          >
             <img src={src} className={styles.img} />
           </li>
         ))}
