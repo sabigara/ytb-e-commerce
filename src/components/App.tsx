@@ -28,19 +28,15 @@ function App() {
           colors={[
             {
               label: "White",
-              hex: "#000000",
+              hex: "#fff",
             },
             {
               label: "Gray",
-              hex: "#eeeeee",
+              hex: "#999",
             },
             {
               label: "Black",
-              hex: "#000000",
-            },
-            {
-              label: "Red",
-              hex: "#ff0000",
+              hex: "#000",
             },
           ]}
           name="White T-Shirt"

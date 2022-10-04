@@ -1,0 +1,17 @@
+@import "../styles/mixins.scss";
+
+.container {
+  display: flex;
+  column-gap: 1.25rem;
+}
+
+.item {
+  border-radius: var(--round-full);
+  width: 1.5rem;
+  height: 1.5rem;
+  outline: solid 1px var(--colors-gray-200);
+}
+
+.input {
+  @include radio(".item");
+}

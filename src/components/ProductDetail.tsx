@@ -1,6 +1,8 @@
 import Breadcrumbs from "./Breadcrumbs";
 import Button from "./Button";
+import Colors from "./Colors";
 import styles from "./ProductDetail.module.scss";
+import Sizes from "./Sizes";
 
 type Props = {
   categories: { label: string; href: string }[];
@@ -25,16 +27,13 @@ export default function ProductDetail({
       <h1 className={styles.name}>{name}</h1>
       <div className={styles.price}>{price}</div>
       <p className={styles.description}>{description}</p>
-      <ul className={styles.colors}>
-        {colors.map((color) => (
-          <li key={color.hex}>{color.label}</li>
-        ))}
-      </ul>
-      <ul className={styles.sizes}>
-        {sizes.map((size) => (
-          <li key={size}>{size}</li>
-        ))}
-      </ul>
+      <Colors
+        items={colors.map((c) => ({
+          hex: c.hex,
+          value: c.label,
+        }))}
+      />
+      <Sizes items={sizes} />
       <Button>Add to cart</Button>
     </div>
   );

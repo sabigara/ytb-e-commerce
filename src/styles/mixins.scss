@@ -1,0 +1,24 @@
+@mixin radio($content-class) {
+  border: 0px;
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+
+  & + #{$content-class} {
+    cursor: pointer;
+    outline-offset: 3px;
+  }
+
+  &:checked + #{$content-class} {
+    outline: solid 2px var(--colors-accent-500);
+  }
+
+  &:focus-visible + #{$content-class} {
+    outline: solid 3px var(--colors-accent-200);
+  }
+}
