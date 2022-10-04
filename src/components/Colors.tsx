@@ -7,7 +7,7 @@ type Props = {
 export default function Colors({ items }: Props) {
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>Color:</h3>
+      <h2 className={styles.title}>Color:</h2>
       <fieldset className={styles.fieldset}>
         {items.map(({ value, hex }) => (
           <label className={styles.label}>

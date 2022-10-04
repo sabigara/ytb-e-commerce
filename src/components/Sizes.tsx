@@ -7,7 +7,7 @@ type Props = {
 export default function Sizes({ items }: Props) {
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>Size:</h3>
+      <h2 className={styles.title}>Size:</h2>
       <fieldset className={styles.fieldset}>
         {items.map((value) => (
           <label className={styles.label}>
