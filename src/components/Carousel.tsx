@@ -9,15 +9,15 @@ type Props = {
 };
 
 export default function Carousel({ images }: Props) {
-  const listRef = React.useRef<HTMLUListElement>(null);
+  const listRef = React.useRef<HTMLUListElement>(null!);
   const [index, setIndex] = React.useState(0);
   const scroll = (direction: "previous" | "next") => {
     const newIndex = Math.min(
       images.length - 1,
       Math.max(0, direction === "next" ? index + 1 : index - 1)
     );
-    listRef.current?.scrollTo({
-      left: newIndex * 500,
+    listRef.current.scrollTo({
+      left: newIndex * listRef.current.getBoundingClientRect().width,
     });
     setIndex(newIndex);
   };

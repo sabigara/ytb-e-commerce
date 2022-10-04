@@ -1,8 +1,5 @@
-$width: 500px;
-$height: 800px;
-
 .container {
-  width: $width;
+  height: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -14,6 +11,7 @@ $height: 800px;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  height: 100%;
 
   &::-webkit-scrollbar {
     display: none;
@@ -23,8 +21,7 @@ $height: 800px;
 .item {
   scroll-snap-align: start;
   flex-shrink: 0;
-  width: $width;
-  height: $height;
+  width: 100%;
 }
 
 .img {
