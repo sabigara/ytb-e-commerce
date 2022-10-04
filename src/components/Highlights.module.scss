@@ -11,4 +11,8 @@
   color: var(--colors-gray-600);
   list-style: disc;
   padding-left: 1rem;
+
+  & li::marker {
+    color: var(--colors-gray-400);
+  }
 }
