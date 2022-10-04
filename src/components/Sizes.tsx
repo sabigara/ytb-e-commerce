@@ -10,7 +10,7 @@ export default function Sizes({ items }: Props) {
       <h2 className={styles.title}>Size:</h2>
       <fieldset className={styles.fieldset}>
         {items.map((value) => (
-          <label className={styles.label}>
+          <label key={value} className={styles.label}>
             <input
               type="radio"
               name="size"

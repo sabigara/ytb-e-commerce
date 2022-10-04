@@ -11,6 +11,7 @@ export default function Rating({ max = 5, value }: Props) {
         .fill(0)
         .map((_, i) => (
           <StartSvg
+            key={i}
             className={styles["star" + (i + 1 <= value ? "--active" : "")]}
           />
         ))}

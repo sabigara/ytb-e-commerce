@@ -91,6 +91,7 @@ function Indicator({ length, current }: IndicatorProps) {
         .fill(0)
         .map((_, i) => (
           <div
+            key={i}
             className={
               styles[`indicator__dot${current === i ? "--active" : ""}`]
             }

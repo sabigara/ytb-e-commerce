@@ -10,7 +10,7 @@ export default function Colors({ items }: Props) {
       <h2 className={styles.title}>Color:</h2>
       <fieldset className={styles.fieldset}>
         {items.map(({ value, hex }) => (
-          <label className={styles.label}>
+          <label key={hex} className={styles.label}>
             <input
               type="radio"
               name="color"
