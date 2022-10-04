@@ -1,0 +1,68 @@
+$width: 500px;
+$height: 800px;
+
+.container {
+  width: $width;
+  overflow: hidden;
+  position: relative;
+}
+
+.list {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.item {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: $width;
+  height: $height;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@mixin button() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border-radius: var(--round-full);
+  padding: 0.5rem;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.3s;
+
+  & > svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: black;
+  }
+
+  &:hover {
+    background-color: var(--colors-gray-100);
+  }
+}
+
+.buttonLeft {
+  @include button();
+
+  left: 0.5rem;
+}
+
+.buttonRight {
+  @include button();
+
+  right: 0.5rem;
+}
