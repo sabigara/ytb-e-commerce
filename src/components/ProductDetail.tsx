@@ -49,9 +49,11 @@ export default function ProductDetail({
         }))}
       />
       <Sizes items={sizes} />
-      <Button>
-        <CartSvg width="1.25rem" height="1.25rem" /> Add to cart
-      </Button>
+      <div className={styles.addToCartWrap}>
+        <Button>
+          <CartSvg width="1.25rem" height="1.25rem" /> Add to cart
+        </Button>
+      </div>
     </div>
   );
 }
