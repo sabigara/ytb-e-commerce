@@ -66,3 +66,29 @@ $height: 800px;
 
   right: 0.5rem;
 }
+
+@mixin dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: white;
+  border-radius: var(--round-full);
+  opacity: 0.5;
+}
+
+.indicator {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  translate: -50%;
+  display: flex;
+  column-gap: 0.5rem;
+
+  &__dot {
+    @include dot();
+  }
+
+  &__dot--active {
+    @include dot();
+    opacity: 1;
+  }
+}

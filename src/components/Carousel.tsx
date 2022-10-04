@@ -10,10 +10,16 @@ type Props = {
 
 export default function Carousel({ images }: Props) {
   const listRef = React.useRef<HTMLUListElement>(null);
+  const [index, setIndex] = React.useState(0);
   const scroll = (direction: "previous" | "next") => {
-    listRef.current?.scrollBy({
-      left: direction === "next" ? 1 : -1,
+    const newIndex = Math.min(
+      images.length - 1,
+      Math.max(0, direction === "next" ? index + 1 : index - 1)
+    );
+    listRef.current?.scrollTo({
+      left: newIndex * 500,
     });
+    setIndex(newIndex);
   };
 
   return (
@@ -25,22 +31,42 @@ export default function Carousel({ images }: Props) {
           </li>
         ))}
       </ul>
-      <div>
-        <button
-          className={styles.buttonLeft}
-          aria-label="previous image"
-          onClick={() => scroll("previous")}
-        >
-          <ChevronLeft />
-        </button>
-        <button
-          className={styles.buttonRight}
-          aria-label="next image"
-          onClick={() => scroll("next")}
-        >
-          <ChevronRight />
-        </button>
-      </div>
+      <button
+        className={styles.buttonLeft}
+        aria-label="previous image"
+        onClick={() => scroll("previous")}
+      >
+        <ChevronLeft />
+      </button>
+      <button
+        className={styles.buttonRight}
+        aria-label="next image"
+        onClick={() => scroll("next")}
+      >
+        <ChevronRight />
+      </button>
+      <Indicator length={images.length} current={index} />
+    </div>
+  );
+}
+
+type IndicatorProps = {
+  length: number;
+  current: number;
+};
+
+function Indicator({ length, current }: IndicatorProps) {
+  return (
+    <div className={styles.indicator}>
+      {Array(length)
+        .fill(0)
+        .map((_, i) => (
+          <div
+            className={
+              styles[`indicator__dot${current === i ? "--active" : ""}`]
+            }
+          />
+        ))}
     </div>
   );
 }
