@@ -19,12 +19,14 @@ export default function Colors({ items }: Props) {
               className={styles.input}
               defaultChecked={i === 0}
             />
-            <div
-              className={styles.item}
-              style={{
-                backgroundColor: hex,
-              }}
-            />
+            <div className={styles.item}>
+              <div
+                className={styles.itemColor}
+                style={{
+                  backgroundColor: hex,
+                }}
+              />
+            </div>
           </label>
         ))}
       </fieldset>

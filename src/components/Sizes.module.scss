@@ -16,11 +16,20 @@
 }
 
 .item {
-  border-radius: var(--round-sm);
+  border-radius: var(--round-md);
   padding: 0.25rem 1rem;
-  outline: solid 1px var(--colors-gray-200);
+  border: solid 1px var(--colors-gray-200);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  height: 2.5rem;
+  width: 4rem;
+  position: relative;
 }
 
 .input {
-  @include radio(".item");
+  @include radio(".item") {
+    border: solid 2px var(--colors-accent-500);
+  }
 }
