@@ -45,6 +45,11 @@ function App() {
           sizes={["xs", "s", "m", "l", "xl"]}
           rating={3}
           numOfReview={84}
+          highlights={[
+            "Lorem ipsum",
+            "Dolor sit amet consectetur",
+            "Adipiscing elit sed do",
+          ]}
         />
       </div>
     </div>

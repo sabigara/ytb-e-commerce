@@ -1,6 +1,7 @@
 import Breadcrumbs from "./Breadcrumbs";
 import Button from "./Button";
 import Colors from "./Colors";
+import Highlights from "./Highlights";
 import styles from "./ProductDetail.module.scss";
 import Rating from "./Rating";
 import Sizes from "./Sizes";
@@ -14,6 +15,7 @@ type Props = {
   sizes: string[];
   rating: number;
   numOfReview: number;
+  highlights: string[];
 };
 
 export default function ProductDetail({
@@ -25,6 +27,7 @@ export default function ProductDetail({
   sizes,
   rating,
   numOfReview,
+  highlights,
 }: Props) {
   return (
     <div className={styles.container}>
@@ -36,6 +39,7 @@ export default function ProductDetail({
         <a href="#">{numOfReview} reviews</a>
       </div>
       <p className={styles.description}>{description}</p>
+      <Highlights items={highlights} />
       <Colors
         items={colors.map((c) => ({
           hex: c.hex,

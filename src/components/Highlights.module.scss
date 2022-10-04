@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  row-gap: 0.75rem;
+}
+
+.title {
+  font-weight: var(--font-weight-medium);
+}
+
+.list {
+  color: var(--colors-gray-600);
+  list-style: disc;
+  padding-left: 1rem;
+}
