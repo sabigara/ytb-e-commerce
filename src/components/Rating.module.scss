@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  column-gap: 0.1rem;
+}
+
+@mixin star() {
+  width: 1rem;
+  height: 1rem;
+}
+
+.star {
+  @include star();
+  color: var(--colors-gray-400);
+}
+
+.star--active {
+  @include star();
+  color: var(--colors-accent-500);
+}
