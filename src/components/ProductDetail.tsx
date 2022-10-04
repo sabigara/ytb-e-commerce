@@ -1,4 +1,5 @@
 import Breadcrumbs from "./Breadcrumbs";
+import Button from "./Button";
 import styles from "./ProductDetail.module.scss";
 
 type Props = {
@@ -34,6 +35,7 @@ export default function ProductDetail({
           <li key={size}>{size}</li>
         ))}
       </ul>
+      <Button>Add to cart</Button>
     </div>
   );
 }
